@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         fileBtn.setOnClickListener(this)
         val sqliteBtn = findViewById<Button>(R.id.btn_sqlite)
         sqliteBtn.setOnClickListener(this)
+        val greendaoBtn = findViewById<Button>(R.id.btn_greendao)
+        greendaoBtn.setOnClickListener(this)
     }
 
     // 控件点击事件监听
@@ -45,6 +47,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_sqlite -> {// SQLite
                 val intent_sqlite = Intent(this, SQLiteActivity::class.java)
                 startActivity(intent_sqlite)
+            }
+            R.id.btn_greendao -> {// GreenDao
+                val intent_greendao = Intent(this, GreenDaoActivity::class.java)
+                startActivity(intent_greendao)
             }
         }
     }
