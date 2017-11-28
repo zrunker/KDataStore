@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     // 初始化控件
     private fun init() {
+        val spBtn = findViewById<Button>(R.id.btn_sp)
+        spBtn.setOnClickListener(this)
         val fileBtn = findViewById<Button>(R.id.btn_file)
         fileBtn.setOnClickListener(this)
     }
@@ -30,7 +32,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     // 控件点击事件监听
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.btn_file -> {//文件存储
+            R.id.btn_sp -> {// SharedPreferences
+                val intent_sp = Intent(this, SharedPreferencesActivity::class.java)
+                startActivity(intent_sp)
+            }
+            R.id.btn_file -> {// 文件存储
                 val intent_file = Intent(this, FileActivity::class.java)
                 startActivity(intent_file)
             }
